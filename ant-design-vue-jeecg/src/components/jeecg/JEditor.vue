@@ -118,6 +118,7 @@
         // 获取父级
         let tabs = getVmParentByName(this, 'ATabs')
         let tabPane = getVmParentByName(this, 'ATabPane')
+        let modal = getVmParentByName(this,'AModal')
         if (tabs && tabPane) {
           // 用户自定义的 key
           let currentKey = tabPane.$vnode.key
@@ -128,6 +129,8 @@
               this.reload()
             }
           })
+        }else if(modal){
+          this.reload()
         }else{
           //update--begin--autor:wangshuai-----date:20200724------for：富文本编辑器切换tab无法修改------
           let tabLayout = getVmParentByName(this, 'TabLayout')
